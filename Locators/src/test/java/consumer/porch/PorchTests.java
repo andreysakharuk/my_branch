@@ -18,8 +18,9 @@ public class PorchTests {
     private static final String URL_CUSTOMER_CARE_PAGE = "http://www.consumerreports.org/customer-care/";
     private static final String URL_TERMS_OF_SERVICES_PAGE = "https://porch.com/about/terms/";
     private static final String URL_PRIVACY_POLICY_PAGE = "https://porch.com/about/privacy";
+    private static final String PLACEHOLDER_SERVICING_FIELD = "What type of pro do you need?";
+    private static final String PLACEHOLDER_ZIP_FIELD = "ZIP code";
     private Steps steps;
-
 
     @BeforeMethod (description = "open browser with 10sec implicit wait and 20sec load page wait")
     public void setUp(){
@@ -77,17 +78,25 @@ public class PorchTests {
         Assert.assertEquals(steps.getActualPrivacyPolicyUrl(), URL_PRIVACY_POLICY_PAGE);
     }
 
-
+/*
     @Test
     public void WhatIsPorchCustomerCareLinkNavigatesToCustomerCarePage(){
         steps.openPage(URL_LEVEL_ONE_PAGE);
         Assert.assertEquals(steps.getWhatIsPorchActualCustomerCareUrl(), URL_CUSTOMER_CARE_PAGE);
     }
+*/
 
+    @Test
+    public void PlaceholderIsInServicingField() {
+        steps.openPage(URL_LEVEL_ONE_PAGE);
+        Assert.assertEquals(steps.getActualPlaceholderServicingField(), PLACEHOLDER_SERVICING_FIELD);
+    }
 
-
-
-
+    @Test
+    public void PlaceholderIsInZipField() {
+        steps.openPage(URL_LEVEL_ONE_PAGE);
+        Assert.assertEquals(steps.getActualPlaceholderZipField(), PLACEHOLDER_ZIP_FIELD);
+    }
 //Tests finish
 
 

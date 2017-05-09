@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import static java.lang.Thread.*;
 
 public class LevelOnePage {
 
@@ -115,7 +118,7 @@ public class LevelOnePage {
         return driver.getCurrentUrl();
     }
 
-/**
+/*
     public String getWhatIsPorchCustomerCareUrl() {
         whatIsPorchLink.click();
         driver.switchTo().alert();
@@ -125,5 +128,14 @@ public class LevelOnePage {
         WebElement privacyPolicyLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Porch Privacy Policy']")));
         return driver.getCurrentUrl();
     }
- **/
+ */
+
+    public String getPlaceholderServicingField() {
+        return servicingField.getAttribute("placeholder");
+    }
+
+    public String getPlaceholderZipField() {
+        return zipField.getAttribute("placeholder");
+    }
+
 }

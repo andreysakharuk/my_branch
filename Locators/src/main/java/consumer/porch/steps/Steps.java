@@ -68,10 +68,21 @@ public class Steps {
         LevelOnePage page1 = new LevelOnePage(driver);
         return page1.getPrivacyPolicyUrl();
     }
-/**
+/*
     public String getWhatIsPorchActualCustomerCareUrl() {
         LevelOnePage page1 = new LevelOnePage(driver);
         return page1.getWhatIsPorchCustomerCareUrl();
     }
- **/
+ */
+
+    public String getActualPlaceholderServicingField() {
+        LevelOnePage page1 = new LevelOnePage(driver);
+        return page1.getPlaceholderServicingField();
+    }
+
+    public String getActualPlaceholderZipField() {
+        LevelOnePage page1 = new LevelOnePage(driver);
+        return page1.getPlaceholderZipField();
+    }
+
 }
