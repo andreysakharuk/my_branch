@@ -54,6 +54,8 @@ public class LevelOnePage {
     @FindBy(xpath = "//button[@class='porchCloseButton']")
     private WebElement whatIsPorchCloseButton;
 
+    @FindBy(xpath = "//div[@class='gnav-breadcrumbs']//a[text()='Home Services']")
+    private WebElement homeServiceBreadCrumb;
 
     public LevelOnePage(WebDriver driver){
         this.driver = driver;
@@ -138,4 +140,8 @@ public class LevelOnePage {
         return zipField.getAttribute("placeholder");
     }
 
+    public String getBreadCrumbUrl() {
+        homeServiceBreadCrumb.click();
+        return driver.getCurrentUrl();
+    }
 }

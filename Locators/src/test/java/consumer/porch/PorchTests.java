@@ -97,6 +97,12 @@ public class PorchTests {
         steps.openPage(URL_LEVEL_ONE_PAGE);
         Assert.assertEquals(steps.getActualPlaceholderZipField(), PLACEHOLDER_ZIP_FIELD);
     }
+
+    @Test
+    public void HomeServiceLinkInBreadCrumbRefreshesPage(){
+        steps.openPage(URL_LEVEL_ONE_PAGE);
+    }
+
 //Tests finish
 
 
